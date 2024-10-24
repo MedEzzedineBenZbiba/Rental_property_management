@@ -1,0 +1,13 @@
+<div class="container">
+    <div class="row" >
+        <ng-container *ngFor="let property of recentProperties" >
+            <div  class="col-md-4" style="margin-bottom: 20px;" appHighlightDirective>
+            <!-- <div *ngIf="!title || category.title.toLowerCase().includes(title.toLowerCase())" class="col-md-4" style="margin-bottom: 20px;"> -->
+                <h3>{{property.title | uppercase }}</h3>
+                <p>Adress : {{property.address}}</p>
+                <p>Price : {{property.price}}</p>
+        
+            </div>
+        </ng-container>
+    </div>
+</div>
