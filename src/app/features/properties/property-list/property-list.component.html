@@ -1,0 +1,33 @@
+<div class="container">
+    <div class="col-md-8 mx-auto">
+      <div class="input-group m-3 w-100">
+        <input
+          class="form-control border-end-0 border rounded-pill"
+          [(ngModel)]="searchValue"
+          (ngModelChange)="onSearchChange()"
+          type="search"
+          id="example-search-input"
+          placeholder="Search..."
+        />
+        <span class="input-group-append">
+          <button class="btn btn-outline-secondary bg-white border-bottom-0 border rounded-pill ms-n5" type="button">
+            <i class="fa fa-search"></i>
+          </button>
+        </span>
+      </div>
+    </div>
+  
+    <div class="row">
+      <ng-container *ngFor="let property of filterPropertyList">
+        <div class="col-md-4" style="margin-bottom: 20px;" appHighlightDirective>
+          <h3>{{ property.title }}</h3>
+          <p>Address: {{ property.address }}</p>
+          <p>Price: {{ property.price }}</p>
+          <button [routerLink]="['details', property.id]">Voir détails</button>
+        </div>
+      </ng-container>
+    </div>
+  
+    <router-outlet></router-outlet>
+  </div>
+  
